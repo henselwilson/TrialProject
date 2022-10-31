@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block baser %}
+
+<p>This page shows list of Phones</p>
+
+<table class="Phone_table" id="listTable">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>In Stock</th>
+    <th>Battery</th>
+    <th>RAM</th>
+    <th>Storage</th>
+  </tr>
+  {% for row in result %}
+    <tr>
+      <td>{{ row.id }}</td>
+      <td> {{ row.title }}</td>
+      <td> {{ row.price }}</td>
+      <td> {{ row.quantity }}</td>
+      <td> {{ row.in_stock }}</td>
+      <td> {{ row.Battery }}</td>
+      <td> {{ row.RAM }}</td>
+      <td> {{ row.Storage }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+
+{% endblock %}
