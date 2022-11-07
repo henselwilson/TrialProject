@@ -21,10 +21,9 @@ class Phone(Product):
     RAM=models.IntegerField(validators=[MaxValueValidator(64),MinValueValidator(1)])
     Storage=models.IntegerField()
 
-class Orders(Product):
+class Orders(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     product_id=models.ForeignKey(Phone,on_delete=models.DO_NOTHING)
     quantity=models.IntegerField(validators=[MaxValueValidator(9999),MinValueValidator(0)])
-
 
 
